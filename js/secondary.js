@@ -21,7 +21,7 @@ const mostrarTabla = ()=>{
 
 const pay = async()=>{
    if(total >= 500){
-   const response = await fetch("http://localhost:4000/create-order", {
+   const response = await fetch("https://servidor-ecommerce-mp.onrender.com/create-order", {
        method: 'POST',
        body: JSON.stringify(products),
        headers: {
