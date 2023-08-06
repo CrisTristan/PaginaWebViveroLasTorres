@@ -72,7 +72,7 @@ const deleteRepeatProduct = () => {
 };
 
 const getProducts = async () => {
-  const products = await (await fetch("http://localhost:4000/products")).json();
+  const products = await (await fetch("https://servidor-ecommerce-mp.onrender.com/products")).json();
   /*
     .then(res => res.json()) //esta linea convierte respuesta en un JSON
     .then(json => console.log(json)) //esta linea imprime los productos
@@ -103,7 +103,7 @@ btnCarrito.addEventListener("click", async () => {
     } else {
       localStorage.setItem("Cliente", JSON.stringify(client));
       localStorage.setItem("Total", "" + total);
-      window.location.href = "http://127.0.0.1:5500/secondary.html";
+      window.location.href = "https://viverolastorres.onrender.com/secondary.html";
     }
   }
 });
@@ -130,7 +130,7 @@ btnRegistro.addEventListener("click", () => {
   client.phone_number = input[1].value;
   client.address = input[2].value;
   client.products = carroFinal;
-  fetch("http://localhost:4000/clients", {
+  fetch("https://servidor-ecommerce-mp.onrender.com/clients", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
